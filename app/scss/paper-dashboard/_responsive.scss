@@ -1,0 +1,96 @@
+
+@media (max-width: 991px) and (min-width: 768px){
+  .nav-tabs-navigation.verical-navs {
+    padding: 0px 2px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .footer {
+    .footer-nav {
+      padding-left: 21px;
+    }
+
+    .credits {
+      padding-right: 15px;
+    }
+  }
+}
+
+@media screen and (min-width: 992px){
+    .navbar-collapse{
+        background: none !important;
+    }
+
+    .navbar .navbar-toggle{
+        display: none;
+    }
+
+    .navbar-nav{
+        .nav-link{
+            &.profile-photo{
+                padding: 0;
+                margin: 7px $padding-base-horizontal;
+            }
+        }
+    }
+
+    .section-nucleo-icons .icons-container{
+        margin: 0 0 0 auto;
+    }
+
+    .dropdown-menu .dropdown-item{
+        color: inherit;
+    }
+
+    .footer{
+        .copyright{
+            float: right;
+            padding-right: 15px;
+        }
+    }
+
+    .sidebar{
+      .sidebar-wrapper{
+        li.active{
+          > a:not([data-toggle="collapse"]),
+          > [data-toggle="collapse"] + div .nav li {
+            &:before{
+              border-right: 17px solid $medium-gray;
+              border-top: 17px solid transparent;
+              border-bottom: 17px solid transparent;
+              content: "";
+              display: inline-block;
+              position: absolute;
+              right: -16px;
+              opacity: 1;
+              top: 7px;
+              transition: opacity 150ms ease-in;
+            }
+
+            &:after{
+              border-right: 17px solid $default-body-bg;
+              border-top: 17px solid transparent;
+              border-bottom: 17px solid transparent;
+              content: "";
+              display: inline-block;
+              position: absolute;
+              right: -17px;
+              opacity: 1;
+              top: 7px;
+              transition: opacity 150ms ease-in;
+            }
+          }
+          >[data-toggle="collapse"] + div .nav li {
+            a{
+              &:before,
+              &:after {
+                top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+}
