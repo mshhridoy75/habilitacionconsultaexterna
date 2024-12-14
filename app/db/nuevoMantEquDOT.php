@@ -21,7 +21,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO dot_reg_mant_equipo (id_Usuario, id_Sede, id_Estandar, id_Equipo, fecha, realizado, tipo_Mantenimiento, soporte) 
 VALUES ('$actual','$sedeId', 3, '$equipo', '$fecha', '$realizado', '$tipo', '$ruta')";

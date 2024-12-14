@@ -14,7 +14,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO dot_inv_instrum (id_Usuario, id_Sede, id_Estandar, tipo, nombre, contenido, stock_unidad, fecha) 
 VALUES ('$actual','$sedeId', 3, '$tipo', '$nombre', '$contenido', '$stock', '$fecha')";

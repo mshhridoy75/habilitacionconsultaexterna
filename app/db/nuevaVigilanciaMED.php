@@ -14,7 +14,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO med_verif_alertas (id_Usuario, id_Sede, id_Estandar, fecha, farmaco, tecno, resultado, observacion) 
 VALUES ('$actual','$sedeId', 4, '$fecha','$farmaco', '$tecno', '$resultado', '$observaciones')";

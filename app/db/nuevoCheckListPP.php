@@ -12,7 +12,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO pp_checklist (id_Usuario, id_Sede, id_Estandar, tema, criterio, condicion, observaciones)
 VALUES ('$actual','$sedeId', 5, '$tema','$criterio', '$condicion', '$observaciones')";

@@ -21,7 +21,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO pp_seguridad_paciente (id_usuario, id_Sede, id_Estandar, causas, accion_mejora, fecha_inicio, fecha_final, fecha_seguimiento, resultado) 
 VALUES ('$actual','$sedeId', 5, '$causas', '$mejora','$inicio', '$final', '$seguimiento', '$resultado')";

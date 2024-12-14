@@ -15,7 +15,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO med_temp_humedad (id_Usuario, id_Sede, id_Estandar, sala, fecha, jornada, temp_ambiente, humedad_relativa, cadena_frio) 
 VALUES ('$actual','$sedeId', 4, '$sala', '$fecha','$jornada', '$ambiente', '$humedad', '$frio')";

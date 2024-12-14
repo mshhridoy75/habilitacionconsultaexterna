@@ -15,7 +15,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO th_crono_cap (id_Usuario, id_Sede, id_Estandar, tema, fecha, responsable, metodologia, duracion, soporte_Asistencia)  
 VALUES ('$actual','$sedeId', 1,'$tema', '$fecha', '$responsable', '$metodo', $duracion, '$soporte')";

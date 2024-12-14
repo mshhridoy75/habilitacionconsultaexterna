@@ -26,7 +26,7 @@ $sedeSelecc = $_GET['sede'];
 
 include '../db/conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $sql = "SELECT id FROM sede WHERE nombre='$sedeSelecc'";
 $result = mysqli_query($conn, $sql);

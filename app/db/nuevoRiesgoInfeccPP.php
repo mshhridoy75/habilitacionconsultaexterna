@@ -19,7 +19,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO pp_riesgo_infecciones (id_Usuario, id_Sede, id_Estandar, fecha, nombre_paciente, numero, procedimiento, anestesia, complicacion_anestesia, complicacion_quirurgica, complicacion_infecciosa, complicacion_procedimiento, observaciones)
 VALUES ('$actual', '$sedeId', 5, '$fecha', '$nombre', '$numero', '$procedimiento', '$anestesia', '$comp_anestesia', '$quirurgica', '$infecciosa', '$comp_procedimiento', '$observaciones')";

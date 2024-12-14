@@ -18,7 +18,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO med_reg_dispositivo (id_Usuario, id_Sede, id_Estandar, descripcion, marca, serie, presentacion, registro_sanitario, clasi_riesgo, vida_util, lote, fecha_vencimiento)
 VALUES ('$actual','$sedeId', 4, '$descripcion','$marca', '$serie', '$presentacion', '$registro', '$riesgo', '$vida', '$lote', '$fecha')";

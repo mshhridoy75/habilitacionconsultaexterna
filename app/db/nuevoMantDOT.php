@@ -12,7 +12,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO dot_crono_mant (id_Usuario, id_Sede, id_Estandar, nombre, actividad, fecha) 
 VALUES ('$actual','$sedeId', 3,'$nombre', '$actividad', '$fecha')";

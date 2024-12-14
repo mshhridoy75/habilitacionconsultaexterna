@@ -5,7 +5,7 @@ session_start();
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $nom1 = $_FILES['file']['name'];
 $tmp1 = $_FILES['file']['tmp_name'];

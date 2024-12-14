@@ -23,7 +23,7 @@ if ($varsesion == null || $varsesion = '') {
 
 include '../db/conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 
 $actual = $_GET['actual'];

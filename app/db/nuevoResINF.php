@@ -48,7 +48,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $noaprov = "INSERT INTO inf_no_aprov (inertes, bolsas_Iner, ordinarios, bolsas_Ordi)
 VALUES ('$inertes', '$nInertes', '$ordinarios', '$nOrdinarios')";

@@ -28,7 +28,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO `inf_mantenimiento`(`id_Usuario`, `id_Sede`, `id_Estandar`, `acabados`, `techos`, `paredes`, `puertas`, `pisos`, `barandas`, `marcos`, `cubiertas`, `ventanas`, `herrajes`, `instalaciones`, `iluminacion`, `agua_Potable`, `aguas_Negras`, `baños_Discapacitados`, `rampas`, `instalaciones_Hidro`, `desechos`, `otros`, `observaciones`)
 VALUES ('$actual','$sedeId', 2,'$acabados', '$techos', '$paredes', '$puertas', '$pisos', '$barandas', '$marcos', '$cubiertas', '$ventanas', 

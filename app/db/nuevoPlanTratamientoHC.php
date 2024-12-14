@@ -11,7 +11,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO `hc_plan_tratamiento`(`id_Usuario`, `id_Sede`, `id_Estandar`, `id_Persona`, `descripcion`, `valor`)
 VALUES ('$actual','$sedeId', 6, '$cedula', '$descripcion', '$valor')";

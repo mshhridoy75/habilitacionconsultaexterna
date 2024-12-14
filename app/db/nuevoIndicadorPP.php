@@ -58,7 +58,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO pp_indicadores (id_Usuario, id_Sede, id_Estandar, nombre, numerador, denominador, unidad, factor, formula, total)
 VALUES ('$actual','$sedeId', 5,'$n1', '$numerador', '$denominador', 'Porcentaje', 100, 'Se divide el numerador entre el denominador y se multiplica por el factor x 100.', ($numerador/$denominador)*100),
