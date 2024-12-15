@@ -17,7 +17,7 @@ include 'conexion.php';
 
 //$conn = OpenCon();
 
-if ($rol = 'odontologo') {
+if ($rol == 'odontologo') {
 
     $consulta = "INSERT INTO usuario (id, pass, nombre, rol)  VALUES ('$usuario','$hashed_password','$nombre','$rol')";
     $envio = mysqli_query($conn, $consulta);
@@ -139,7 +139,7 @@ if ($rol = 'odontologo') {
         //header('Location: ../../gestionAdmin.php?sedeSel=$sede&usuarioSel=$odont');
     }
 } else {
-    $consulta = "INSERT INTO usuario (id, password, nombre, rol)  VALUES ('$usuario','$hashed_password','$nombre','$rol')";
+    $consulta = "INSERT INTO usuario (id, pass, nombre, rol)  VALUES ('$usuario','$hashed_password','$nombre','$rol')";
     $envio = mysqli_query($conn, $consulta);
     if ($envio) {
 

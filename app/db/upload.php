@@ -1,9 +1,8 @@
 <?php
-$actual = $_POST['actual'];
-$sede = $_POST['sede'];
-$nombre = $_POST['nombre'];
-$estandar = $_POST['estandar'];
-
+$actual = $_POST['actual'] ?? null;
+$sede = $_POST['sede'] ?? null;
+$nombre = $_POST['nombre'] ?? null;
+$estandar = $_POST['estandar'] ?? null;
 session_start();
 
 include 'conexion.php';

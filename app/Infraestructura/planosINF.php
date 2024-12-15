@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 session_start();
 $varsesion = $_SESSION['usuario'];
 
-if ($varsesion == null || $varsesion = '') {
+if ($varsesion == null || $varsesion == '') {
     echo 'Usted no tiene autorizacion';
     die();
 }

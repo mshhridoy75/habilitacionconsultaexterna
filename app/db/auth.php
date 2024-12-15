@@ -1,34 +1,37 @@
 <?php
-
 include 'conexion.php';
 session_start();
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
 try {
-    // Establecer conexión
-
-
     // Validar entradas
-    $usuario = mysqli_real_escape_string($conn, $_POST['usuario']);
+    $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
     // Prepare and execute the query
-    $stmt = $conn->prepare("SELECT usuario, pass, rol FROM usuario WHERE usuario = ?");
+    $stmt = $conn->prepare("SELECT id, usuario, pass, rol FROM usuario WHERE usuario = ?");
     $stmt->bind_param("s", $usuario);
     $stmt->execute();
     $stmt->store_result();
 
     // Check if the query returned any rows
     if ($stmt->num_rows > 0) {
-        $stmt->bind_result($dbUsuario, $dbPassword, $rol);
+        $stmt->bind_result($dbId, $dbUsuario, $dbPassword, $rol);
         $stmt->fetch();
 
         // Verify the password
         if (password_verify($password, $dbPassword)) {
-            $_SESSION['usuario'] = $dbUsuario;
+            // Regenerate session ID to prevent session fixation attacks
+            session_regenerate_id(true);
+            
+            // Store the logged-in user's id and username
+            $_SESSION['usuario'] = $dbUsuario;  // Storing the username in session
+            $_SESSION['usuario_id'] = $dbId;    // Store the user ID
+
+            // Now `$actual` can be `$_SESSION['usuario_id']`
+            $actual = $_SESSION['usuario_id'];
 
             // Redirect based on role
             if ($rol === 'administrador') {
@@ -51,11 +54,11 @@ try {
     $stmt->close();
     $conn->close();
 } catch (Exception $e) {
-    // Manejo de excepciones
-    showError($e->getMessage());
+    // Handle exceptions
+    showError("Error: " . $e->getMessage());
 }
 
-// Función para mostrar mensaje de error
+// Function to show error messages
 function showError($message)
 {
     echo '
