@@ -23,7 +23,7 @@ if ($varsesion == null || $varsesion = '') {
 
 include '../db/conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 
 $actual = $_GET['actual'];
@@ -526,13 +526,41 @@ WHERE id_Usuario='$actual' AND id_Sede='$sedeId'";
 
 <?php } else {
     $odontoSelecc = $_GET['usuarioSel'];
+    
+    $consulta = "SELECT 
+        inf_residuo.fecha, 
+        inf_no_aprov.inertes, 
+        inf_no_aprov.bolsas_Iner, 
+        inf_no_aprov.ordinarios, 
+        inf_no_aprov.bolsas_Ordi, 
+        inf_no_pelig.biodegradables, 
+        inf_no_pelig.bolsas_Bio, 
+        inf_no_pelig.reciclables, 
+        inf_no_pelig.bolsas_Reci, 
+        inf_aprov.bolsas_Batas, 
+        inf_aprov.bolsas_Envolve, 
+        inf_aprov.inertes AS inerApro, 
+        inf_aprov.bolsas_Iner AS nInerApro, 
+        inf_aprov.ordinarios AS ordiApro, 
+        inf_aprov.bolsas_Ordi AS nOrdiApro, 
+        inf_residuo.responsable, 
+        inf_residuo.empresa_Recolectora, 
+        inf_residuo.frecuencia
+    FROM inf_residuo
+    JOIN inf_no_aprov ON inf_residuo.no_Aprovechable = inf_no_aprov.id
+    JOIN inf_no_pelig ON inf_residuo.no_Peligroso = inf_no_pelig.id
+    JOIN inf_aprov ON inf_residuo.aprovechable = inf_aprov.id
+    JOIN usuario ON inf_residuo.id_Usuario = usuario.id  -- Add this join to link the tables
+    JOIN sede ON inf_residuo.id_Sede = sede.id 
+    WHERE usuario.id='$actual' AND sede.id='$sedeId'";
 
-    $consulta = "SELECT inf_residuo.fecha, inf_no_aprov.inertes, inf_no_aprov.bolsas_Iner, inf_no_aprov.ordinarios, inf_no_aprov.bolsas_Ordi, inf_no_pelig.biodegradables, inf_no_pelig.bolsas_Bio, inf_no_pelig.reciclables, inf_no_pelig.bolsas_Reci, inf_aprov.bolsas_Batas, inf_aprov.bolsas_Envolve, inf_aprov.inertes AS inerApro, inf_aprov.bolsas_Iner AS nInerApro, inf_aprov.ordinarios AS ordiApro, inf_aprov.bolsas_Ordi AS nOrdiApro, inf_residuo.responsable, inf_residuo.empresa_Recolectora, inf_residuo.frecuencia       
+
+    /*$consulta = "SELECT inf_residuo.fecha, inf_no_aprov.inertes, inf_no_aprov.bolsas_Iner, inf_no_aprov.ordinarios, inf_no_aprov.bolsas_Ordi, inf_no_pelig.biodegradables, inf_no_pelig.bolsas_Bio, inf_no_pelig.reciclables, inf_no_pelig.bolsas_Reci, inf_aprov.bolsas_Batas, inf_aprov.bolsas_Envolve, inf_aprov.inertes AS inerApro, inf_aprov.bolsas_Iner AS nInerApro, inf_aprov.ordinarios AS ordiApro, inf_aprov.bolsas_Ordi AS nOrdiApro, inf_residuo.responsable, inf_residuo.empresa_Recolectora, inf_residuo.frecuencia       
 FROM inf_residuo
 JOIN inf_no_aprov ON inf_residuo.no_Aprovechable = inf_no_aprov.id
 JOIN inf_no_pelig ON inf_residuo.no_Peligroso = inf_no_pelig.id
 JOIN inf_aprov ON inf_residuo.aprovechable = inf_aprov.id 
-WHERE id_Usuario='$actual' AND id_Sede='$sedeId'";
+WHERE id_Usuario='$actual' AND id_Sede='$sedeId'";*/
 
     $envio = mysqli_query($conn, $consulta);
 
@@ -541,7 +569,9 @@ FROM inf_peligroso
 JOIN inf_infeccioso ON inf_peligroso.infeccioso=inf_infeccioso.id
 JOIN inf_quimico ON inf_peligroso.quimico=inf_quimico.id
 JOIN inf_radioactivo ON inf_peligroso.radioactivo=inf_radioactivo.id
-WHERE id_Usuario='$actual' AND id_Sede='$sedeId'";
+JOIN usuario ON inf_peligroso.id_Usuario = usuario.id  -- Join the 'usuario' table
+JOIN sede ON inf_peligroso.id_Sede = sede.id  -- Join the 'sede' table
+WHERE usuario.id='$actual' AND sede.id='$sedeId'";
 
 
     $envio2 = mysqli_query($conn, $consulta2);
