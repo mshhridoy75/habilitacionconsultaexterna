@@ -9,7 +9,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 if ($mes == 1) {
     $nomes = 'Enero';

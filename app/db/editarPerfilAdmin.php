@@ -11,7 +11,7 @@ $_SESSION['usuario'] = $usuario;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 
 

@@ -22,7 +22,7 @@ if ($varsesion == null || $varsesion = '') {
 }
 include './app/db/conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $sedeSelecc = $_POST['sede'];
 

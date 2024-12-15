@@ -47,7 +47,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO pp_referencia_pacientes (id_Usuario, id_Sede, id_Estandar, nombre_prestador, fecha_referencia, hora_referencia, numero_documento, tipo_documento, apellido_1, apellido_2, nombres, sexo, fecha_nacimiento, edad, estado_civil, direccion_paciente, ciudad, localidad, barrio, telefono, nombre_aseguradora, tipo_vinculacion, ocupacion, acompanante, telefono_acompanante, responsable, parentesco_responsable, telefono_responsable, sintomatologia, medidas, razones) 
 VALUES ('$actual','$sedeId', 5, '$nombre_prestador', '$fecha_referencia', '$hora_referencia', '$numero_documento', '$tipo_documento', '$apellido_1', '$apellido_2', '$nombres', '$sexo', '$fecha_nacimiento', '$edad', '$estado_civil', '$direccion_paciente', '$ciudad', '$localidad', '$barrio', '$telefono', '$nombre_aseguradora', '$tipo_vinculacion', '$ocupacion', '$acompanante', '$telefono_acompanante', '$responsable', '$parentesco_responsable', '$telefono_responsable', '$sintomatologia', '$medidas', '$razones')";

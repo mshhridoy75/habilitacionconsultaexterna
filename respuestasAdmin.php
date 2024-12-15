@@ -23,7 +23,7 @@ if ($varsesion == null || $varsesion = '') {
 
 include './app/db/conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $odontoSelecc = $_GET['usuarioSel'];
 $actual = $_GET['actual'];

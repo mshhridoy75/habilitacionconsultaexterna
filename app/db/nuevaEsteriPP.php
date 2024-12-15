@@ -23,7 +23,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO pp_planilla_esterilizacion (id_Usuario, id_Sede, id_Estandar, fecha, lote, paquete, contenido, hora_inicio, hora_final, temperatura, presion, tiempo, control_quimico, control_biologico, responsable)  
 VALUES ('$actual','$sedeId', 5, '$fecha', '$lote', '$paquete', '$contenido', '$inicio', '$final', '$temperatura','$presion', '$tiempo', '$quimico', '$biologico', '$responsable')";

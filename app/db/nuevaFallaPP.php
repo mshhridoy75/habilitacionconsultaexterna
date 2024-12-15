@@ -14,7 +14,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO pp_fallas_atencion (id_Usuario, id_Sede, id_Estandar, falla, tipo, fecha, analisis, mejoramiento)
 VALUES ('$actual', '$sedeId', 5, '$falla', '$tipo', '$fecha', '$analisis', '$mejoramiento')";

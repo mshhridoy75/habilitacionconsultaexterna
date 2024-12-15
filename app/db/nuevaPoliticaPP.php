@@ -9,7 +9,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO pp_politica (id_Usuario, id_Sede, id_Estandar, politica) 
 VALUES ('$actual','$sedeId', 5, '$politica')";

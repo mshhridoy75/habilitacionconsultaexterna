@@ -20,7 +20,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO inf_eval_infra (id_Usuario, id_Sede, id_Estandar, materiales_Solidos, numero_Baños, discapacitados, escalones, rampas, cuarto_Aseo, deposito, certificacion_RETIE, certificacion_ONAC, ambientes_Varios, certificaciones, incendios) 
 VALUES ('$actual','$sedeId', 2,'$pisos', $baños, '$discapacitados', '$escalones', '$rampas', '$cuarto_Aseo', '$deposito', '$retie', '$onac', '$especs', '$certs', '$incendios')";

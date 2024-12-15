@@ -36,7 +36,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO dot_hdv_equipo (id_Usuario, id_Sede, id_Estandar, fecha_adquisicion, origen, proveedor, email, telefono, placa_inventario, nombre, marca, modelo, serie, clasi_riesgo, registro_sanitario, `doc_invima`, `manual_uso`, `guias_rapidas`)
 VALUES ('$actual', '$sedeId', 3, '$fecha', '$origen', '$proveedor', '$email', '$telefono', '$placa_inventario', '$nombre', '$marca', '$modelo', '$serie', '$clasi_riesgo', '$registro_sanitario', '$ruta', '$ruta2', '$ruta3')";

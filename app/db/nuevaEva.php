@@ -16,7 +16,7 @@ $_SESSION['actual'] = $actual;
 
 include 'conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "INSERT INTO th_eval (id_Usuario, id_Sede, id_Estandar, nombre_Empleado, tema_Evaluacion, tipo_Evaluacion, pregunta, respuesta, correcta, puntuacion, accion_Mejora) 
 VALUES ('$actual','$sedeId', 1,'$nombre', '$tema', '$tipo', '$pregunta', '$respuesta', '$correcta', $puntuacion, '$accion' )";

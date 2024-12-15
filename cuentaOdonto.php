@@ -27,7 +27,7 @@ $actual = $_GET['actual'];
 
 include_once './/app/db/conexion.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 
 $consulta = "SELECT * FROM usuario where id='$actual'";
 $envio = mysqli_query($conn, $consulta);
