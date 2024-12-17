@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 session_start();
 $varsesion = $_SESSION['usuario'];
 
-if ($varsesion == null || $varsesion = '') {
+if ($varsesion == null || $varsesion == '') {
     echo 'Usted no tiene autorizacion';
     die();
 }
@@ -248,9 +248,20 @@ if ($actual != 'admin') {
 
     </html>
 
-<?php } else {
+<!-- <?php } else {
     $odontoSelecc = $_GET['usuarioSel'];
+?> -->
+<?php
+if (isset($_GET['usuarioSel'])) {
+    $odontoSelecc = $_GET['usuarioSel'];
+} else {
+    // Handle the case when 'usuarioSel' is not set in the GET request
+    echo "usuarioSel is not set.";
+    // Or you can redirect or set a default value
+    $odontoSelecc = null;  // Example of setting a default value
+}
 ?>
+
 
     <!doctype html>
     <html lang="en">

@@ -221,11 +221,11 @@ if ($actual != 'admin') {
 <?php
 } else {
     $odontoSelecc = $_GET['usuarioSel'];
-
     $consulta = "SELECT nombre, ruta
     FROM docs 
-    WHERE id_Usuario='$odontoSelecc' AND id_Sede='$sedeId' AND estandar=3 AND usuario_origen='$odontoSelecc' AND usuario_Destino='admin'";
-    $envio = mysqli_query($conn, $consulta);
+    WHERE id='$odontoSelecc' AND id_Sede='$sedeId' AND estandar=3 AND usuario_origen='$odontoSelecc' AND usuario_Destino='admin'";
+$envio = mysqli_query($conn, $consulta);
+
 
 
 
