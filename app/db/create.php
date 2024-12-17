@@ -19,7 +19,7 @@ include 'conexion.php';
 
 if ($rol == 'odontologo') {
 
-    $consulta = "INSERT INTO usuario (id, pass, nombre, rol)  VALUES ('$usuario','$hashed_password','$nombre','$rol')";
+    $consulta = "INSERT INTO usuario (usuario, pass, nombre, rol)  VALUES ('$usuario','$hashed_password','$nombre','$rol')";
     $envio = mysqli_query($conn, $consulta);
 
     if ($envio) {
